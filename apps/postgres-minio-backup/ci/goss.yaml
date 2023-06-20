@@ -4,4 +4,4 @@ file:
     exists: true
   /usr/local/bin/mc:
     exists: true
-    mode: 755
+    mode: "0755"
