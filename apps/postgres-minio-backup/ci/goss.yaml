@@ -1,0 +1,7 @@
+---
+file:
+  /usr/libexec/postgresql15/pg_dump:
+    exists: true
+  /usr/local/bin/mc:
+    exists: true
+    executable: true
