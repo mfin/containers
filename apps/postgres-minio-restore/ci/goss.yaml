@@ -1,0 +1,7 @@
+---
+file:
+  /usr/libexec/postgresql15/pg_restore:
+    exists: true
+  /usr/local/bin/mc:
+    exists: true
+    mode: "0755"
