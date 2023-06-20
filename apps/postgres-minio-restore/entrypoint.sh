@@ -31,6 +31,6 @@ mc alias set s3 $MINIO_ENDPOINT $MINIO_ACCESS_KEY $MINIO_SECRET_KEY
 
 mc cp s3/$MINIO_BUCKET/$DUMP_FILE /tmp/
 
-psql --command "drop owned by $INIT_POSTGRES_USER" --dbname $INIT_POSTGRES_DBNAME
+# psql --command "drop owned by $INIT_POSTGRES_USER" --dbname $INIT_POSTGRES_DBNAME
 
-pg_restore -Fc -j 8 -d $INIT_POSTGRES_DBNAME /tmp/$DUMP_FILE
+pg_restore -Fc -j 8 --clean --if-exists --verbose -d $INIT_POSTGRES_DBNAME /tmp/$DUMP_FILE
