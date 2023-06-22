@@ -1,0 +1,4 @@
+---
+file:
+  /usr/local/lib/node_modules/date-holidays:
+    exists: true
