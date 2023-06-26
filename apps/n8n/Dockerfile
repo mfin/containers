@@ -4,4 +4,4 @@ ARG TARGETPLATFORM
 ARG VERSION
 ARG CHANNEL
 
-RUN npm install -g date-holidays
+RUN npm install -g date-holidays axios
