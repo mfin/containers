@@ -4,4 +4,4 @@ ARG TARGETPLATFORM
 ARG VERSION
 ARG CHANNEL
 
-RUN npm install -g date-holidays papaparse
+RUN npm install -g date-holidays papaparse csv-to-markdown-table
