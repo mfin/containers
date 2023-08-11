@@ -7,7 +7,7 @@ ARG CHANNEL
 #hadolint ignore=DL3018
 RUN apk add --no-cache ca-certificates postgresql15-client~"${VERSION}"
 
-RUN curl https://dl.min.io/client/mc/release/linux-amd64/mc.RELEASE.2023-06-19T19-31-19Z -o /usr/local/bin/mc && \
+RUN curl https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/local/bin/mc && \
     chmod +x /usr/local/bin/mc
 
 USER kah
