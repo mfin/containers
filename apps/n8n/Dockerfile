@@ -6,5 +6,6 @@ ARG CHANNEL
 
 USER root
 
-COPY ./apps/n8n/packag*.json ./
-RUN npm install -g ./
+COPY ./apps/n8n/package.json /tmp/
+COPY ./apps/n8n/package-lock.json /tmp/
+RUN npm install -g /tmp/
