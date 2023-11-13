@@ -4,10 +4,13 @@ ARG TARGETPLATFORM
 ARG VERSION
 ARG CHANNEL
 
+# renovate: datasource=github-releases depName=minio/mc
+ARG MINIO_VERSION="RELEASE.2023-11-06T04-19-23Z"
+
 #hadolint ignore=DL3018
 RUN apk add --no-cache ca-certificates postgresql15-client~"${VERSION}"
 
-RUN curl https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/local/bin/mc && \
+RUN curl https://dl.min.io/client/mc/release/linux-amd64/archive/mc.${MINIO_VERSION} -o /usr/local/bin/mc && \
     chmod +x /usr/local/bin/mc
 
 USER kah
