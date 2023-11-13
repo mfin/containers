@@ -30,7 +30,7 @@ RUN apt-get update && \
 RUN curl -fsSL https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
     -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
-RUN curl -fsSL https://github.com/getsops/sops/releases/download/${SOPS_VERSION}/sops-${SOPS_VERSION}.linux \
+RUN curl -fsSL https://github.com/getsops/sops/releases/download/${SOPS_VERSION}/sops-${SOPS_VERSION}.linux.amd64 \
     -o /usr/local/bin/sops && chmod +x /usr/local/bin/sops
 
 RUN ln -sf "$(helm env HELM_PLUGINS)/helm-secrets/scripts/wrapper/helm.sh" /usr/local/sbin/helm
