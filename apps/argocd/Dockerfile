@@ -35,6 +35,6 @@ RUN curl -fsSL https://github.com/getsops/sops/releases/download/${SOPS_VERSION}
 
 RUN ln -sf "$(helm env HELM_PLUGINS)/helm-secrets/scripts/wrapper/helm.sh" /usr/local/sbin/helm
 
-USER argocd
+USER $ARGOCD_USER_ID
 
 RUN helm plugin install --version ${HELM_SECRETS_VERSION} https://github.com/jkroepke/helm-secrets
