@@ -6,8 +6,4 @@ ARG CHANNEL
 
 USER root
 
-WORKDIR /usr/local/lib/
-
-COPY ./apps/n8n/package.json ./
-COPY ./apps/n8n/package-lock.json ./
-RUN npm install
+RUN npm install -g date-holidays papaparse csv-to-markdown-table lodash
