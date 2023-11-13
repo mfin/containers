@@ -30,9 +30,15 @@
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["digest"],
       "commitMessagePrefix": "📣 "
+    },
+    {
+      "description": "Use custom versioning for Minio",
+      "matchDatasources": ["github-releases"],
+      "versioning": "regex:^RELEASE\\.(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)T.*Z$",
+      "matchPackagePatterns": ["minio/mc"]
     }
   ],
-    "regexManagers": [
+  "regexManagers": [
     {
       "description": "Process custom Dockerfile dependencies",
       "fileMatch": [
