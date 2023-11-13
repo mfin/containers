@@ -6,5 +6,5 @@ ARG CHANNEL
 
 USER root
 
-COPY package*.json /tmp/
-RUN npm install -g /tmp/
+COPY package.json package-lock.json ./
+RUN npm install -g
