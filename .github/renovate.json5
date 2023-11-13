@@ -31,5 +31,18 @@
       "matchUpdateTypes": ["digest"],
       "commitMessagePrefix": "📣 "
     }
+  ],
+    "regexManagers": [
+    {
+      "description": "Process custom Dockerfile dependencies",
+      "fileMatch": [
+        ".+Dockerfile$"
+      ],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\nARG .*?_VERSION=(\\\\?)(\"?)(?<currentValue>.+?)(\\\\?)(\"?)\\n"
+      ],
+      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
   ]
 }
