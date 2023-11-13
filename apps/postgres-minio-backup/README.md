@@ -1,1 +1,1 @@
-# postgres-init
+# postgres-minio-backup
