@@ -6,5 +6,5 @@ ARG CHANNEL
 
 USER root
 
-COPY package*.json /
+COPY package*.json /home/node/
 RUN npm install -g
