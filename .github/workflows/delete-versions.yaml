@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/delete-package-versions@v4
         with:
-          package-name: "{{ github.event.inputs.packageName }}"
+          package-name: "${{ github.event.inputs.packageName }}"
           package-type: container
           num-old-versions-to-delete: 100
           min-versions-to-keep: 0
