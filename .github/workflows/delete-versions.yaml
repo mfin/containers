@@ -18,4 +18,4 @@ jobs:
         with:
           package-name: "${{ github.event.inputs.packageName }}"
           package-type: container
-          num-old-versions-to-delete: 10
+          num-old-versions-to-delete: 100
