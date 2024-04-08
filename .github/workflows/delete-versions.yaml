@@ -14,7 +14,7 @@ jobs:
     name: Delete container versions for ${{ github.event.inputs.packageName }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/delete-package-versions@v4
+      - uses: actions/delete-package-versions@v5
         with:
           package-name: "${{ github.event.inputs.packageName }}"
           package-type: container
