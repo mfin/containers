@@ -1,21 +1,27 @@
 ---
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Pull Request: Validate"
-
-on:
-  pull_request:
-    branches: ["main"]
-    types: ["opened", "synchronize", "reopened"]
+name: Release on Merge
 
 concurrency:
-  group: ${{ github.head_ref }}-pr-validate
-  cancel-in-progress: true
+  group: container-release
+  cancel-in-progress: false
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "apps/**"
+      - ".github/scripts/templates/**"
+      - "!apps/**/metadata.json"
+      - "!apps/**/metadata.yaml"
+      - "!apps/**/README.md"
 
 jobs:
   simple-checks:
     uses: mfin/containers/.github/workflows/simple-checks.yaml@main
 
   get-changed-images:
+    needs: ["simple-checks"]
     uses: mfin/containers/.github/workflows/get-changed-images.yaml@main
 
   build-images:
@@ -25,5 +31,12 @@ jobs:
     secrets: inherit
     with:
       appsToBuild: "${{ needs.get-changed-images.outputs.addedOrModifiedImages }}"
-      pushImages: false
-      sendNotifications: false
+      pushImages: true
+      sendNotifications: true
+
+  render-readme:
+    name: Render Readme
+    needs: build-images
+    if: ${{ always() && needs.build-images.result != 'failure' }}
+    uses: ./.github/workflows/render-readme.yaml
+    secrets: inherit
