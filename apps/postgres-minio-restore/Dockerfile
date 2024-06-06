@@ -5,7 +5,7 @@ ARG VERSION
 ARG CHANNEL
 
 # renovate: datasource=github-releases depName=minio/mc
-ARG MINIO_VERSION="RELEASE.2024-04-18T16-45-29Z"
+ARG MINIO_VERSION="RELEASE.2024-06-01T15-03-35Z"
 
 #hadolint ignore=DL3018
 RUN apk add --no-cache ca-certificates postgresql15-client~"${VERSION}"
