@@ -1,4 +1,4 @@
-FROM quay.io/argoproj/argocd:v2.11.2
+FROM quay.io/argoproj/argocd:v2.12.0
 
 ARG TARGETPLATFORM
 ARG VERSION
