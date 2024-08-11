@@ -5,7 +5,7 @@ ARG VERSION
 ARG CHANNEL
 
 # renovate: datasource=github-releases depName=getsops/sops
-ARG SOPS_VERSION="v3.8.1"
+ARG SOPS_VERSION="v3.9.0"
 # renovate: datasource=github-releases depName=jkroepke/helm-secrets
 ARG HELM_SECRETS_VERSION="v4.6.1"
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
