@@ -1,4 +1,4 @@
-FROM ghcr.io/n8n-io/n8n:1.54.0@sha256:efdbf2c1ac09dcde8d45f56bb4a7626cc709aa7171c634e441efd66d5bb8fb36
+FROM ghcr.io/n8n-io/n8n:2.6.2@sha256:ff6fe9eca746b7455c9e6e4fbc6f5753c3204e82279e015fa62f1bfe309e6343
 
 ARG TARGETPLATFORM
 ARG VERSION
