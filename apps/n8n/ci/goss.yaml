@@ -1,4 +1,6 @@
 ---
-file:
-  /usr/local/lib/node_modules/date-holidays:
-    exists: true
+command:
+  "find /opt/ -type d -name 'date-holidays'":
+    exit-status: 0
+    stdout:
+      - "date-holidays"
