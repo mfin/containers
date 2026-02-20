@@ -68,7 +68,6 @@ Each Image will be built with a `rolling` tag, along with tags specific to it's 
 Container | Channel | Image
 --- | --- | ---
 [argocd](https://github.com/mfin/containers/pkgs/container/argocd) | stable | ghcr.io/mfin/argocd
-[n8n](https://github.com/mfin/containers/pkgs/container/n8n) | stable | ghcr.io/mfin/n8n
 [postgres-minio-backup](https://github.com/mfin/containers/pkgs/container/postgres-minio-backup) | stable | ghcr.io/mfin/postgres-minio-backup
 [postgres-minio-restore](https://github.com/mfin/containers/pkgs/container/postgres-minio-restore) | stable | ghcr.io/mfin/postgres-minio-restore
 

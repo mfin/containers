@@ -1,6 +1,0 @@
----
-command:
-  "find /opt/ -type d -name 'date-holidays'":
-    exit-status: 0
-    stdout:
-      - "date-holidays"
